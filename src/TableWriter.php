@@ -33,7 +33,8 @@ class TableWriter implements Writer
     /**
      * {@inheritdoc}
      */
-    public function writeItem(array $item) {
+    public function writeItem(array $item): void
+    {
 
         // Save first item to get keys to display at header
         if (is_null($this->firstItem)) {
@@ -46,7 +47,8 @@ class TableWriter implements Writer
     /**
      * {@inheritdoc}
      */
-    public function finish() {
+    public function finish(): void
+    {
         $headers = $this->firstItem ? array_keys($this->firstItem) : [];
         $this->table->setHeaders($headers);
         $this->table->render();
