@@ -60,8 +60,7 @@ class ProgressWriter implements Writer
     /**
      * {@inheritdoc}
      */
-    public function prepare(): void
-    {
+    public function prepare(): void {
         $this->progress = new ProgressBar($this->output, $this->reader->count());
         $this->progress->setFormat($this->verbosity);
         $this->progress->setRedrawFrequency($this->redrawFrequency);
@@ -71,16 +70,14 @@ class ProgressWriter implements Writer
     /**
      * {@inheritdoc}
      */
-    public function writeItem(array $item): void
-    {
+    public function writeItem(array $item): void {
         $this->progress->advance();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function finish(): void
-    {
+    public function finish(): void {
         $this->progress->finish();
     }
 }
